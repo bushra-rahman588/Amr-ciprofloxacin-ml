@@ -1,0 +1,24 @@
+cat > .gitignore << 'EOF'
+# data outputs (do NOT push genomes / large files)
+data/interim/
+data/processed/
+results/
+models/
+
+# archives / binaries
+*.zip
+*.gz
+*.fna
+*.fa
+*.fasta
+*.tsv
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# env
+.env
+.venv
+EOF

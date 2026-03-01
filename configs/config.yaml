@@ -1,0 +1,16 @@
+phenotype_csv: data/raw/phenotype/ecoli_cipro.csv
+
+biosample_col: "#BioSample"
+mic_col: "MIC (mg/L)"
+antibiotic_col: "Antibiotic"
+
+resistant_mic_threshold: 1.0
+
+mapping_out: data/interim/mapping/biosample_to_assembly.csv
+genomes_dir: data/interim/genomes
+amrfinder_dir: data/interim/amrfinder
+
+features_out: data/processed/features/features.csv
+labels_out: data/processed/labels/labels.csv
+
+metrics_out: results/metrics/cv_metrics.csv

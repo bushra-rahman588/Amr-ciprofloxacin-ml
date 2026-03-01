@@ -1,0 +1,8 @@
+cat > requirements.txt << 'EOF'
+pandas
+numpy
+scikit-learn
+tqdm
+joblib
+matplotlib
+EOF
