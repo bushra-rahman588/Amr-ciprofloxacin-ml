@@ -1,4 +1,4 @@
-phenotype_csv: data/raw/phenotype/final_genotype_phenotype_dataset.csv
+phenotype_csv: data/raw/phenotype/ecoli_cipro.csv
 
 biosample_col: "#BioSample"
 mic_col: "MIC (mg/L)"
