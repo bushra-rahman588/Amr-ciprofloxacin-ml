@@ -1,0 +1,4 @@
+Protein id	Contig id	Start	Stop	Strand	Element symbol	Element name	Scope	Type	Subtype	Class	Subclass	Method	Target length	Reference sequence length	% Coverage of reference	% Identity to reference	Alignment length	Closest reference accession	Closest reference name	HMM accession	HMM description
+NA	AASECT010000010.1	2500	4389	-	parE_D475E	Escherichia quinolone resistant ParE	core	AMR	POINT	QUINOLONE	QUINOLONE	POINTX	630	630	100.00	99.52	630	WP_033554192.1	DNA topoisomerase IV subunit B ParE	NA	NA
+NA	AASECT010000062.1	783	1979	+	tet(A)	tetracycline efflux MFS transporter Tet(A)	core	AMR	AMR	TETRACYCLINE	TETRACYCLINE	BLASTX	399	399	100.00	99.75	399	WP_000804064.1	tetracycline efflux MFS transporter Tet(A)	NA	NA
+NA	AASECT010000097.1	487	1683	+	tet(A)	tetracycline efflux MFS transporter Tet(A)	core	AMR	AMR	TETRACYCLINE	TETRACYCLINE	BLASTX	399	399	100.00	99.75	399	WP_000804064.1	tetracycline efflux MFS transporter Tet(A)	NA	NA

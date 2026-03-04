@@ -1,0 +1,2 @@
+Protein id	Contig id	Start	Stop	Strand	Element symbol	Element name	Scope	Type	Subtype	Class	Subclass	Method	Target length	Reference sequence length	% Coverage of reference	% Identity to reference	Alignment length	Closest reference accession	Closest reference name	HMM accession	HMM description
+NA	JAKXUV010000018.1	69318	71942	-	gyrA_S83A	Escherichia quinolone resistant GyrA	core	AMR	POINT	QUINOLONE	QUINOLONE	POINTX	875	878	99.66	99.09	875	WP_001281243.1	DNA gyrase subunit A GyrA	NA	NA

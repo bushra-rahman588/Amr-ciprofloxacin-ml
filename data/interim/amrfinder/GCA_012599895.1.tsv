@@ -1,0 +1,5 @@
+Protein id	Contig id	Start	Stop	Strand	Element symbol	Element name	Scope	Type	Subtype	Class	Subclass	Method	Target length	Reference sequence length	% Coverage of reference	% Identity to reference	Alignment length	Closest reference accession	Closest reference name	HMM accession	HMM description
+NA	AASVSV010000055.1	6599	7801	+	tet(B)	tetracycline efflux MFS transporter Tet(B)	core	AMR	AMR	TETRACYCLINE	TETRACYCLINE	EXACTX	401	401	100.00	100.00	401	WP_001089068.1	tetracycline efflux MFS transporter Tet(B)	NA	NA
+NA	AASVSV010000079.1	7557	8414	+	blaTEM-1	broad-spectrum class A beta-lactamase TEM-1	core	AMR	AMR	BETA-LACTAM	BETA-LACTAM	ALLELEX	286	286	100.00	100.00	286	WP_000027057.1	broad-spectrum class A beta-lactamase TEM-1	NA	NA
+NA	AASVSV010000154.1	4347	5204	+	blaTEM-1	broad-spectrum class A beta-lactamase TEM-1	core	AMR	AMR	BETA-LACTAM	BETA-LACTAM	ALLELEX	286	286	100.00	100.00	286	WP_000027057.1	broad-spectrum class A beta-lactamase TEM-1	NA	NA
+NA	AASVSV010000157.1	721	1923	+	tet(B)	tetracycline efflux MFS transporter Tet(B)	core	AMR	AMR	TETRACYCLINE	TETRACYCLINE	EXACTX	401	401	100.00	100.00	401	WP_001089068.1	tetracycline efflux MFS transporter Tet(B)	NA	NA

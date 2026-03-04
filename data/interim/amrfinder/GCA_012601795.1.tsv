@@ -1,0 +1,2 @@
+Protein id	Contig id	Start	Stop	Strand	Element symbol	Element name	Scope	Type	Subtype	Class	Subclass	Method	Target length	Reference sequence length	% Coverage of reference	% Identity to reference	Alignment length	Closest reference accession	Closest reference name	HMM accession	HMM description
+NA	AASVYA010000094.1	4840	7383	+	cyaA_S352T	Escherichia fosmidomycin resistant CyaA	core	AMR	POINT	FOSMIDOMYCIN	FOSMIDOMYCIN	POINTX	848	848	100.00	99.29	848	WP_000281668.1	adenylate cyclase CyaA	NA	NA

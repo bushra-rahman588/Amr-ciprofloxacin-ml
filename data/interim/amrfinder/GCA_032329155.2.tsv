@@ -1,0 +1,6 @@
+Protein id	Contig id	Start	Stop	Strand	Element symbol	Element name	Scope	Type	Subtype	Class	Subclass	Method	Target length	Reference sequence length	% Coverage of reference	% Identity to reference	Alignment length	Closest reference accession	Closest reference name	HMM accession	HMM description
+NA	ABNHIF020000001.1	140717	142972	-	parC_S80I	Escherichia quinolone resistant ParC	core	AMR	POINT	QUINOLONE	QUINOLONE	POINTX	752	752	100.00	99.87	752	WP_001281881.1	DNA topoisomerase IV subunit A ParC	NA	NA
+NA	ABNHIF020000002.1	31768	34392	-	gyrA_D87N	Escherichia quinolone resistant GyrA	core	AMR	POINT	QUINOLONE	QUINOLONE	POINTX	875	878	99.66	98.97	875	WP_001281243.1	DNA gyrase subunit A GyrA	NA	NA
+NA	ABNHIF020000002.1	31768	34392	-	gyrA_S83L	Escherichia quinolone resistant GyrA	core	AMR	POINT	QUINOLONE	QUINOLONE	POINTX	875	878	99.66	98.97	875	WP_001281243.1	DNA gyrase subunit A GyrA	NA	NA
+NA	ABNHIF020000034.1	6430	7572	+	blaCMY-2	extended-spectrum class C beta-lactamase CMY-2	core	AMR	AMR	BETA-LACTAM	CEPHALOSPORIN	ALLELEX	381	381	100.00	100.00	381	WP_000976514.1	extended-spectrum class C beta-lactamase CMY-2	NA	NA
+NA	ABNHIF020000129.1	3182	4324	+	blaCMY-2	extended-spectrum class C beta-lactamase CMY-2	core	AMR	AMR	BETA-LACTAM	CEPHALOSPORIN	ALLELEX	381	381	100.00	100.00	381	WP_000976514.1	extended-spectrum class C beta-lactamase CMY-2	NA	NA

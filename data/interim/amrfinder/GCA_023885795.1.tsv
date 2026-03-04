@@ -1,0 +1,2 @@
+Protein id	Contig id	Start	Stop	Strand	Element symbol	Element name	Scope	Type	Subtype	Class	Subclass	Method	Target length	Reference sequence length	% Coverage of reference	% Identity to reference	Alignment length	Closest reference accession	Closest reference name	HMM accession	HMM description
+NA	JAKYIT010000001.1	242746	244635	+	parE_D475E	Escherichia quinolone resistant ParE	core	AMR	POINT	QUINOLONE	QUINOLONE	POINTX	630	630	100.00	99.52	630	WP_033554192.1	DNA topoisomerase IV subunit B ParE	NA	NA

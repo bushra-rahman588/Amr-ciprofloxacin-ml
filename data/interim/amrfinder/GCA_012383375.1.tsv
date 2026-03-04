@@ -1,0 +1,7 @@
+Protein id	Contig id	Start	Stop	Strand	Element symbol	Element name	Scope	Type	Subtype	Class	Subclass	Method	Target length	Reference sequence length	% Coverage of reference	% Identity to reference	Alignment length	Closest reference accession	Closest reference name	HMM accession	HMM description
+NA	AASDPI010000006.1	93975	95951	-	cirA_Q42Ter	Escherichia cefiderocol resistant CirA	core	AMR	POINT	BETA-LACTAM	CEFIDEROCOL	POINTX	659	663	100.00	98.64	663	WP_000489247.1	catecholate siderophore receptor CirA	NA	NA
+NA	AASDPI010000020.1	42480	45023	-	cyaA_S352T	Escherichia fosmidomycin resistant CyaA	core	AMR	POINT	FOSMIDOMYCIN	FOSMIDOMYCIN	POINTX	848	848	100.00	99.29	848	WP_000281668.1	adenylate cyclase CyaA	NA	NA
+NA	AASDPI010000087.1	3044	3901	+	blaTEM-1	broad-spectrum class A beta-lactamase TEM-1	core	AMR	AMR	BETA-LACTAM	BETA-LACTAM	ALLELEX	286	286	100.00	100.00	286	WP_000027057.1	broad-spectrum class A beta-lactamase TEM-1	NA	NA
+NA	AASDPI010000115.1	76	945	+	blaHER-3	class A beta-lactamase HER-3	core	AMR	AMR	BETA-LACTAM	BETA-LACTAM	ALLELEX	290	290	100.00	100.00	290	WP_023281079.1	class A beta-lactamase HER-3	NA	NA
+NA	AASDPI010000138.1	3065	3922	+	blaTEM-1	broad-spectrum class A beta-lactamase TEM-1	core	AMR	AMR	BETA-LACTAM	BETA-LACTAM	ALLELEX	286	286	100.00	100.00	286	WP_000027057.1	broad-spectrum class A beta-lactamase TEM-1	NA	NA
+NA	AASDPI010000139.1	77	946	+	blaHER-3	class A beta-lactamase HER-3	core	AMR	AMR	BETA-LACTAM	BETA-LACTAM	ALLELEX	290	290	100.00	100.00	290	WP_023281079.1	class A beta-lactamase HER-3	NA	NA
