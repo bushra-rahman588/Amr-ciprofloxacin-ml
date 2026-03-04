@@ -108,40 +108,51 @@ Evaluation results from cross-validation are summarised and stored in the metric
 scripts/11_variant_evolution_analysis.py
 ```
 
-This step examines mutation patterns in the quinolone resistance-determining region.
-Mutation frequencies are calculated and visualised to identify common substitutions across genomes.
-Frequent mutations observed include variants at:
-gyrA position 83
-gyrA position 87
-parC position 80
-These positions are known to play a role in fluoroquinolone resistance.
+* This step examines mutation patterns in the quinolone resistance-determining region.
 
-Key Genomic Features Used
+* Mutation frequencies are calculated and visualised to identify common substitutions across genomes.
+
+* Frequent mutations observed include variants at:
+
+* **gyrA position 83**
+
+* **gyrA position 87**
+
+* **parC position 80**
+
+* These positions are known to play a role in fluoroquinolone resistance.
+
+
+### Key Genomic Features Used
+
 The model incorporates a range of genomic biomarkers:
-QRDR mutations in gyrA and parC
-plasmid-mediated quinolone resistance genes
-total AMR gene count
-quinolone gene counts
-mutation accumulation features
-genome assembly statistics
+
+* QRDR mutations in gyrA and parC
+* Plasmid-mediated quinolone resistance genes
+* Total AMR gene count
+* Quinolone gene counts
+* Mutation accumulation features
+* Genome assembly statistics
+
 
 
 ## Biological Interpretation
 
-The analysis highlights the importance of genomic variation within the quinolone resistance-determining region (QRDR) in shaping ciprofloxacin resistance phenotypes. Mutations detected in the gyrA and parC genes appear consistently across resistant isolates and emerge as strong predictors during the machine learning analysis.
-In particular, substitutions at conserved QRDR positions such as gyrA S83, gyrA D87, and parC S80 were frequently observed in the dataset. These mutations are known to alter the interaction between fluoroquinolone antibiotics and the bacterial type II topoisomerases DNA gyrase and topoisomerase IV. Changes at these residues reduce the binding affinity of ciprofloxacin, thereby decreasing drug susceptibility.
-Another notable observation is the relationship between mutation accumulation and resistance prediction. Genomes carrying multiple QRDR mutations tend to have higher predicted resistance probabilities compared to genomes with fewer or no mutations. This pattern is consistent with the well-established evolutionary pathway of fluoroquinolone resistance, where sequential mutations in target genes progressively increase resistance levels.
-Interpretability analysis further supports these findings. Features related to mutation count, gyrA mutations, and parC mutations showed strong contributions to model predictions, indicating that the model captures biologically meaningful signals rather than relying on unrelated genomic properties. Plasmid-mediated quinolone resistance genes such as qnr, oqx, and qep were detected in some isolates but generally contributed less to prediction compared to chromosomal QRDR mutations.
-Overall, the genomic features identified by the model align with established mechanisms of ciprofloxacin resistance in Escherichia coli, supporting the biological relevance of the predictive framework.
+* The analysis highlights the importance of genomic variation within the quinolone resistance-determining region (QRDR) in shaping ciprofloxacin resistance phenotypes. Mutations detected in the gyrA and parC genes appear consistently across resistant isolates and emerge as strong predictors during the machine learning analysis.<br><br>
+* In particular, substitutions at conserved QRDR positions such as gyrA S83, gyrA D87, and parC S80 were frequently observed in the dataset. These mutations are known to alter the interaction between fluoroquinolone antibiotics and the bacterial type II topoisomerases DNA gyrase and topoisomerase IV. Changes at these residues reduce the binding affinity of ciprofloxacin, thereby decreasing drug susceptibility.<br><br>
+* Another notable observation is the relationship between mutation accumulation and resistance prediction. Genomes carrying multiple QRDR mutations tend to have higher predicted resistance probabilities compared to genomes with fewer or no mutations. This pattern is consistent with the well-established evolutionary pathway of fluoroquinolone resistance, where sequential mutations in target genes progressively increase resistance levels.<br><br>
+* Interpretability analysis further supports these findings. Features related to mutation count, gyrA mutations, and parC mutations showed strong contributions to model predictions, indicating that the model captures biologically meaningful signals rather than relying on unrelated genomic properties. Plasmid-mediated quinolone resistance genes such as qnr, oqx, and qep were detected in some isolates but generally contributed less to prediction compared to chromosomal QRDR mutations. <br><br>
+* Overall, the genomic features identified by the model align with established mechanisms of ciprofloxacin resistance in Escherichia coli, supporting the biological relevance of the predictive framework.
+
 
 
 ## Conclusion
 
 
-This project presents a reproducible pipeline that integrates curated antimicrobial susceptibility testing (AST) data with bacterial genome assemblies to investigate genomic determinants of ciprofloxacin resistance.
-The workflow combines genome retrieval, resistance gene detection, mutation profiling, feature engineering, and machine learning analysis into a single computational framework. Population-aware cross-validation was used to minimise potential bias caused by closely related genomes, ensuring that the model evaluation reflects true predictive ability.
-The results demonstrate that genomic biomarkers, particularly QRDR mutations in gyrA and parC, provide strong signals for predicting ciprofloxacin resistance phenotypes. Mutation accumulation patterns further reinforce the evolutionary nature of resistance development.
 
-Beyond predictive modelling, the pipeline provides a structured approach for exploring how genomic variation contributes to antimicrobial resistance. By integrating mutation-level analysis with machine learning interpretation, the framework offers insights into the genomic signals underlying resistance phenotypes. The workflow can potentially be extended to other antibiotics or larger genomic datasets to further investigate antimicrobial resistance mechanisms
+* This project presents a **reproducible pipeline** that integrates curated **antimicrobial susceptibility testing (AST)** data with **bacterial genome assemblies** to investigate genomic determinants of **ciprofloxacin resistance**. <br><br>
+* The workflow combines **genome retrieval, resistance gene detection, mutation profiling, feature engineering**, and **machine learning analysis** into a single computational framework. **Population-aware** ***cross-validation*** was used to minimise potential bias caused by closely related genomes, ensuring that the model evaluation reflects true predictive ability. <br><br>
+* The results demonstrate that **genomic biomarkers**, particularly **QRDR** mutations in ***gyrA*** and ***parC***, provide strong signals for predicting ciprofloxacin resistance phenotypes. Mutation accumulation patterns further reinforce the evolutionary nature of resistance development. <br><br>
+* Beyond predictive modelling, the pipeline provides a structured approach for exploring how genomic variation contributes to antimicrobial resistance. By integrating mutation-level analysis with machine learning interpretation, the framework offers insights into the genomic signals underlying resistance phenotypes. The workflow can potentially be extended to other antibiotics or larger genomic datasets to further investigate antimicrobial resistance mechanisms. 
 
 
