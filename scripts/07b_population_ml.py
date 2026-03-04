@@ -87,7 +87,7 @@ cluster_df = pd.DataFrame(
     columns=["Assembly", "Group"]
 )
 
-print("Clusters:", cluster_df["Group"].nunique())
+print("Clusters formed:", cluster_df["Group"].nunique())
 
 
 # -------------------------
@@ -95,22 +95,33 @@ print("Clusters:", cluster_df["Group"].nunique())
 # -------------------------
 
 df = pd.read_csv(dataset_path)
-# df = df.drop["mutation_count_y"]
+
+# Fix mutation column if needed
+if "mutation_count_x" in df.columns:
+    df["mutation_count"] = df["mutation_count_x"]
+
+elif "mutation_count_y" in df.columns:
+    df["mutation_count"] = df["mutation_count_y"]
+
+df = df.drop(
+    columns=[c for c in df.columns if c.endswith("_x") or c.endswith("_y")],
+    errors="ignore"
+)
 
 df = df.merge(cluster_df, on="Assembly", how="left")
-
 df["Group"] = df["Group"].fillna(-1)
 
 
 # -------------------------
-# 5. Prepare ML
+# 5. Feature Selection (Original)
 # -------------------------
 
 features = [
     "qnr", "aac6", "oqx", "qep",
     "gyrA_mut", "parC_mut",
     "GenomeSize", "Contigs",
-    "total_amr_genes", "mutation_count_x",
+    "total_amr_genes",
+    "mutation_count",
     "quinolone_gene_count"
 ]
 
@@ -132,7 +143,10 @@ for train_idx, test_idx in gkf.split(X, y, groups):
     X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
     y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
 
-    model = RandomForestClassifier(n_estimators=200, random_state=42)
+    model = RandomForestClassifier(
+        n_estimators=200,
+        random_state=42
+    )
 
     model.fit(X_train, y_train)
 
@@ -143,7 +157,7 @@ for train_idx, test_idx in gkf.split(X, y, groups):
     aucs.append(auc)
 
 
-print("Group CV AUROC:", np.mean(aucs))
+print("Group CV AUROC:", round(np.mean(aucs), 4))
 
 
 # -------------------------
@@ -152,6 +166,8 @@ print("Group CV AUROC:", np.mean(aucs))
 
 fpr, tpr, _ = roc_curve(y_test, probs)
 
+os.makedirs("results/figures", exist_ok=True)
+
 plt.figure()
 plt.plot(fpr, tpr, label=f"AUC={auc:.3f}")
 plt.plot([0, 1], [0, 1], linestyle="--")
@@ -159,21 +175,33 @@ plt.xlabel("False Positive Rate")
 plt.ylabel("True Positive Rate")
 plt.title("ROC Curve (Group-aware)")
 plt.legend()
-plt.savefig("results/figures/roc_curve.png", dpi=300)
+plt.savefig("results/figures/roc_curve_groupaware.png", dpi=300)
 plt.close()
 
 
 # -------------------------
-# 8. Feature Importance Plot
+# 8. Feature Importance
 # -------------------------
 
 importances = model.feature_importances_
 
-plt.figure()
-plt.barh(features, importances)
+importance_df = pd.DataFrame({
+    "Feature": features,
+    "Importance": importances
+}).sort_values(by="Importance", ascending=False)
+
+print("\nTop Features:")
+print(importance_df)
+
+plt.figure(figsize=(7,5))
+plt.barh(
+    importance_df["Feature"][::-1],
+    importance_df["Importance"][::-1]
+)
 plt.xlabel("Importance")
-plt.title("Feature Importance")
-plt.savefig("results/figures/feature_importance.png", dpi=300)
+plt.title("Feature Importance (Group-aware RF)")
+plt.tight_layout()
+plt.savefig("results/figures/feature_importance_groupaware.png", dpi=300)
 plt.close()
 
 
