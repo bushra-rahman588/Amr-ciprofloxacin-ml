@@ -1,9 +1,9 @@
 cat > .gitignore << 'EOF'
 # data outputs (do NOT push genomes / large files)
-data/interim/
-data/processed/
-results/
-models/
+data/interim/genomes
+
+
+
 
 # archives / binaries
 *.zip
