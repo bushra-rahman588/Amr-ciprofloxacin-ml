@@ -15,8 +15,7 @@ The main stages of the pipeline are summarised below.
 scripts/01_biosample_to_assembly.py
 ```
 
-Phenotypic resistance information was manually curated from NCBI **antimicrobial susceptibility testing (AST)** metadata associated with biosample records.
-Biosample identifiers were then mapped to their corresponding genome assemblies so that resistance phenotypes could be linked with genomic sequences.
+Phenotypic resistance information was manually curated from NCBI **antimicrobial susceptibility testing (AST)** metadata associated with biosample records(raw/phenotype/ecoli_cipro.csv).Biosample identifiers were then mapped to their corresponding genome assemblies so that resistance phenotypes could be linked with genomic sequences.
 This step produces the metadata table used for downstream genome download and analysis.
 
 ### 2. Genome Download
