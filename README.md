@@ -144,6 +144,8 @@ The model incorporates a range of genomic biomarkers:
 * Interpretability analysis further supports these findings. Features related to mutation count, gyrA mutations, and parC mutations showed strong contributions to model predictions, indicating that the model captures biologically meaningful signals rather than relying on unrelated genomic properties. Plasmid-mediated quinolone resistance genes such as qnr, oqx, and qep were detected in some isolates but generally contributed less to prediction compared to chromosomal QRDR mutations. <br><br>
 * Overall, the genomic features identified by the model align with established mechanisms of ciprofloxacin resistance in Escherichia coli, supporting the biological relevance of the predictive framework.
 
+#### This is a correlation matrix of the desired results
+![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/figures/correlation_matrix.png)
 
 
 ## Conclusion
