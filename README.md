@@ -25,12 +25,18 @@ Particularly frequent substitutions were observed at:
 
 These residues are located within the QRDR of bacterial type II topoisomerases (DNA gyrase and topoisomerase IV), the primary molecular targets of fluoroquinolone antibiotics. Mutations at these positions reduce drug binding affinity and therefore decrease ciprofloxacin susceptibility.
 
-* Another notable observation is the relationship between mutation accumulation and resistance prediction. Genomes carrying multiple QRDR mutations tend to have higher predicted resistance probabilities compared to genomes with fewer or no mutations. This pattern is consistent with the well-established evolutionary pathway of fluoroquinolone resistance, where sequential mutations in target genes progressively increase resistance levels.<br><br>
-* Interpretability analysis further supports these findings. Features related to mutation count, gyrA mutations, and parC mutations showed strong contributions to model predictions, indicating that the model captures biologically meaningful signals rather than relying on unrelated genomic properties. Plasmid-mediated quinolone resistance genes such as qnr, oqx, and qep were detected in some isolates but generally contributed less to prediction compared to chromosomal QRDR mutations. <br><br>
+* Another notable observation is the relationship between mutation accumulation and resistance prediction. Genomes carrying multiple QRDR mutations tend to have higher predicted resistance probabilities compared to genomes with fewer or no mutations, ***(as seen in the graph below)***. This pattern is consistent with the well-established evolutionary pathway of fluoroquinolone resistance, where sequential mutations in target genes progressively increase resistance levels.<br><br> 
+
+![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/figures/qrdr_vs_resistance.png)<br><br>
+
+* Interpretability analysis further supports these findings. Features related to mutation count, gyrA mutations, and parC mutations showed strong contributions to model predictions, indicating that the model captures biologically meaningful signals rather than relying on unrelated genomic properties ***(as seen in the graph below)***. Plasmid-mediated quinolone resistance genes such as qnr, oqx, and qep were detected in some isolates but generally contributed less to prediction compared to chromosomal QRDR mutations. <br><br>
+
+![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/figures/shap_summary.png) <br><br>
+
 * Overall, the genomic features identified by the model align with established mechanisms of ciprofloxacin resistance in Escherichia coli, supporting the biological relevance of the predictive framework.
 
-#### This is a correlation matrix of the desired results
-![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/figures/correlation_matrix.png)
+#### Graph showing genes were mutation appears among resistant isolates showing frequent substitution at **gyrA S83** **gyrA D87** **parC S80**
+![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/figures/qrdr_individual_frequency.png)
 
 
 
@@ -84,23 +90,21 @@ scripts/06_create_dataset.py
 
 Combined genomic features with resistance phenotypes to create the final machine learning dataset.
 
-Output dataset:
+**Output dataset:**
 ```bash
 data/processed/ml_dataset_advanced.csv
 ```
 
 
-### 7. Feature Engineering and Population-aware Machine Learning
+### 7. Feature Engineering
 ```bash
-Feature upgrades
+scripts/07a_upgrade_features.py
 ```
 
-scripts/07a_upgrade_features.py
-
 Additional summary features are created, including:
-mutation_count
-total AMR genes
-quinolone resistance gene counts
+* Mutation_count
+* Total AMR genes
+* Quinolone resistance gene counts
 
 ## Population-aware ML model(7b)
 
@@ -118,6 +122,8 @@ To avoid overestimating model performance due to closely related genomes, a **po
 This approach reduces phylogenetic bias and provides a more realistic estimate of predictive performance.
 
 
+
+
 ## 8. Model Interpretation
 ```bash
 scripts/08_interpretability.py
@@ -130,7 +136,9 @@ Interpretability analysis revealed that the strongest predictors included:
 * parC mutations
 * mutation count features
 
-SHAP analysis was used to quantify the contribution of each genomic feature to model predictions, allowing interpretation at both the global and individual genome level.
+SHAP analysis was used to quantify the contribution of each genomic feature to model predictions, allowing interpretation at both the global and individual genome level***(as seen in the graph below)***.
+
+![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/figures/shap_importance.png)
 
 ```bash
 scripts/09_shap_analysis.py
@@ -142,6 +150,9 @@ scripts/09_shap_analysis.py
 scripts/10_results_metrics.py
 ```
 Evaluation results from cross-validation are summarised and stored in the metrics directory. Performance statistics such as AUROC and confusion matrices are generated.
+
+**Below is the graph showing ROC curve for the classifier.**
+![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/metrics/roc_curve_final.png)
 
 ## 11. Variant Evolution Analysis
 ```bash
