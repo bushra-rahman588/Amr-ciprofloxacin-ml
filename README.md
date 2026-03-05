@@ -38,10 +38,73 @@ These residues are located within the QRDR of bacterial type II topoisomerases (
 #### Graph showing genes were mutation appears among resistant isolates showing frequent substitution at **gyrA S83** **gyrA D87** **parC S80**
 ![Alt text](https://github.com/bushra-rahman588/Amr-ciprofloxacin-ml/blob/main/results/figures/qrdr_individual_frequency.png)
 
+## Dataset Description
+
+This study integrates genomic data and antimicrobial susceptibility testing (AST) phenotypes to investigate genomic determinants of ciprofloxacin resistance.
+
+### Species
+
+Escherichia coli
+
+### Antibiotic
+
+Ciprofloxacin (fluoroquinolone class)
+
+### Phenotype Data Source
+
+Phenotypic resistance data were curated from NCBI BioSample antimicrobial susceptibility testing (AST) metadata.
+
+### The phenotype dataset includes isolates annotated as:
+
+* Resistant
+* Susceptible
+
+based on ciprofloxacin susceptibility testing.
+
+### Genomic Data
+
+Genome assemblies corresponding to BioSample records were retrieved from the NCBI Assembly database.
+
+Each genome is associated with:
+
+* Assembly accession
+* BioSample identifier
+* Ciprofloxacin phenotype label
 
 
 ## Overview of the Computational Pipeline
-The pipeline links phenotypic antimicrobial susceptibility data with bacterial genome assemblies and transforms genomic information into machine-learning-ready features.
+The pipeline links phenotypic antimicrobial susceptibility data with bacterial genome assemblies and transforms genomic information into machine learning model for resistance prediction.
+
+```bash
+AST Phenotype Data
+        │
+        ▼
+BioSample → Genome Assembly Mapping
+        │
+        ▼
+Genome Download
+        │
+        ▼
+AMR Gene Detection (AMRFinderPlus)
+        │
+        ▼
+Mutation Profiling (QRDR regions)
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Machine Learning Dataset Creation
+        │
+        ▼
+Population-aware ML Model (Random Forest)
+        │
+        ▼
+Model Evaluation & Interpretation
+        │
+        ▼
+Mutation Evolution Analysis
+```
 
 Each stage is implemented as a standalone script to ensure reproducibility and transparency.
 
@@ -186,5 +249,20 @@ The model incorporates a range of genomic biomarkers:
 * By integrating **phenotypic antimicrobial susceptibility data, bacterial genomes, resistance gene detection**, and **machine learning**, the workflow demonstrates how genomic biomarkers can be used to predict resistance phenotypes. <br><br>
 * The results confirm that **QRDR mutations** in **gyrA** and **parC** are dominant signals driving ciprofloxacin resistance prediction. <br><br>
 * Beyond prediction, the pipeline provides a structured framework for exploring genotype–phenotype relationships in antimicrobial resistance. The workflow can be extended to **other antibiotics**,**additional bacterial species** and **larger genomic surveillance datasets**. Such approaches may contribute to genomic surveillance and predictive modelling of antimicrobial resistance evolution.
+
+## Operating System
+
+Tested on:
+```bash
+Linux (Ubuntu 20.04+)
+```
+The pipeline may also run on macOS environments with compatible dependencies.
+
+## Citation
+
+If you use this pipeline, please cite:
+
+Rahman B. Amr-ciprofloxacin-ml: Predicting Ciprofloxacin Resistance from Bacterial Genomic Biomarkers.
+GitHub, 2026.
 
 
